@@ -1,0 +1,13 @@
+# Visual Studio 2015/2017 cache/options directory
+.vs/
+
+# User-specific files
+*.suo
+*.user
+
+# Windows thumbnail cache files
+Thumbs.db
+
+# Visual C++ cache files
+ipch/
+*.aps
