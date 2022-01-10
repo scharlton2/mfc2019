@@ -2,12 +2,11 @@ cmake_minimum_required(VERSION 3.19)
 
 project(mfc2019 CXX)
 
-add_definitions(-D_AFXDLL)
 set(CMAKE_MFC_FLAG 2)
 
 add_executable(mfc2019 WIN32
-    MainFrm.cpp
     framework.h
+    MainFrm.cpp
     MainFrm.h
     mfc2019.cpp
     mfc2019.h
@@ -26,8 +25,12 @@ add_executable(mfc2019 WIN32
     targetver.h
 )
 
-# target_precompile_headers(mfc2019
-# )
+target_compile_definitions(mfc2019 PRIVATE _AFXDLL)
+
+if(MSVC)
+   set_target_properties(mfc2019 PROPERTIES COMPILE_FLAGS "/Yupch.h")
+   set_source_files_properties(pch.cpp PROPERTIES COMPILE_FLAGS "/Ycpch.h")
+endif(MSVC)
 
 # source_group("Resource Files"
 #     mfc2019.rc

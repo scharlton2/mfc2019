@@ -11,3 +11,10 @@ Thumbs.db
 # Visual C++ cache files
 ipch/
 *.aps
+
+# VS History files
+.vshistory/
+
+# Build directories
+Release/
+Debug/
